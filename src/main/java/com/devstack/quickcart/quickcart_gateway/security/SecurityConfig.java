@@ -1,4 +1,4 @@
-package security;
+package com.devstack.quickcart.quickcart_gateway.security;
 
 import org.apache.catalina.Server;
 import org.springframework.context.annotation.Bean;
@@ -32,6 +32,7 @@ public class SecurityConfig {
         corsConfiguration.setAllowedOrigins(List.of("*")); // abc.com
         corsConfiguration.setAllowedHeaders(List.of("*"));
         corsConfiguration.setAllowedMethods(List.of("*"));
+        corsConfiguration.setMaxAge(3600L);
         corsConfiguration.setAllowCredentials(false);
         org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource source =
                 new org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource();
